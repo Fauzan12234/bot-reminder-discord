@@ -65,10 +65,8 @@ async def play_alarm(member, level):
         if not active_reminders.get(member.id, {}).get("active"):
             break
 
-        source = discord.FFmpegPCMAudio(
-            executable="C:/ffmpeg/bin/ffmpeg.exe",
-            source="alarm.mp3"
-        )
+source = discord.FFmpegPCMAudio(source="alarm.mp3")
+
 
         vc.play(source)
 
@@ -213,3 +211,4 @@ async def on_ready():
 
 
 bot.run(TOKEN)
+
