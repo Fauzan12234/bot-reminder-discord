@@ -7,6 +7,9 @@ import os
 import pytz
 from dotenv import load_dotenv
 
+from keepalive import keep_alive  # <- import keepalive
+keep_alive()  # <- jalankan web server
+
 load_dotenv()
 TOKEN = os.getenv("TOKEN")
 
@@ -211,4 +214,5 @@ async def on_ready():
 
 
 bot.run(TOKEN)
+
 
